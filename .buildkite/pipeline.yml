@@ -27,4 +27,10 @@ steps:
       - environment-domain-variable
       - kops-variable
       - kubernetes-variable
-    command: env
+    commands:
+      - echo "Environment variable: $ENVIRONMENT"
+      - echo "Environment domain variable: $ENVIRONMENT_DOMAIN"
+      - echo "KOPS variable: $KOPS_VERSION"
+      - echo "KOPS variable: $KOPS_STATE_STORE"
+      - echo "KOPS variable: $KOPS_CLUSTER_NAME"
+      - echo "Kubernetes variable: $KUBERNETES_VERSION"
