@@ -3,16 +3,28 @@ steps:
     command: echo "Hello!"
 
   - label: "Create environment variable from script"
+    key: env-variable-script
     command: .buildkite/scripts/environment-variable.sh
 
   - label: "Create environment domain variable from script"
+    key: environment-domain-variable
     command: .buildkite/scripts/environment_domain-variable.sh
 
   - label: "Create kops variable from script"
+    key: kops-variable
+    depends_on: 
+      - env-variable-script
+      - environment-domain-variable
     command: .buildkite/scripts/kops-variable.sh
 
   - label: "Create kubernetes variable from script"
+    key: kubernetes-variable
     command: .buildkite/scripts/kubernetes-variable.sh
   
   - label: "Output all environment variables"
+    depends_on: 
+      - env-variable-script
+      - environment-domain-variable
+      - kops-variable
+      - kubernetes-variable
     command: env
