@@ -1,0 +1,1 @@
+export KUBERNETES_VERSION="2.2.2"

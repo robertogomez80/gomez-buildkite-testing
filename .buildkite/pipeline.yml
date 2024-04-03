@@ -1,3 +1,18 @@
 steps:
   - label: "Example Test"
     command: echo "Hello!"
+
+  - label: "Create environment variable from script"
+    command: .buildkite/scripts/environment-variable.sh
+
+  - label: "Create environment domain variable from script"
+    command: .buildkite/scripts/environment_domain-variable.sh
+
+  - label: "Create kops variable from script"
+    command: .buildkite/scripts/kops-variable.sh
+
+  - label: "Create kubernetes variable from script"
+    command: .buildkite/scripts/kubernetes-variable.sh
+  
+  - label: "Output all environment variables"
+    command: env

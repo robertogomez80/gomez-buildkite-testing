@@ -1,0 +1,3 @@
+export KOPS_VERSION="1.1.1"
+export KOPS_STATE_STORE="s3://kops-state-store-${ENVIRONMENT}"
+export KOPS_CLUSTER_NAME="k8s.${ENVIRONMENT}.${ENVIRONMENT_DOMAIN}"

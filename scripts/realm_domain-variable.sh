@@ -1,0 +1,1 @@
+export ENVIRONMENT_DOMAIN="my.domain"
